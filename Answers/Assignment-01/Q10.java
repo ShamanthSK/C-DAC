@@ -1,13 +1,19 @@
 // Assignment 01 - Question 10: Student Result
+import java.util.Scanner;
+
 public class Q10 {
     public static void main(String[] args) {
-        int marks = 65;
+        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Student Marks: " + marks);
+        System.out.print("Enter student marks: ");
+        int marks = sc.nextInt();
+
         if (marks >= 40) {
-            System.out.println("Result: Pass");
+            System.out.println("Result: PASS");
         } else {
-            System.out.println("Result: Fail");
+            System.out.println("Result: FAIL");
         }
+
+        sc.close();
     }
 }

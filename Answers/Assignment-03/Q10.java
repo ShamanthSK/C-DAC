@@ -1,4 +1,6 @@
 // Assignment 03 - Question 10: Count Even and Odd Numbers
+import java.util.Scanner;
+
 public class Q10 {
     static int[] countEvenOdd(int[] arr) {
         int evenCount = 0;
@@ -15,14 +17,24 @@ public class Q10 {
     }
 
     public static void main(String[] args) {
-        int[] numbers = {12, 17, 24, 35, 40, 51, 68};
+        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Array elements: ");
-        for (int n : numbers) System.out.print(n + " ");
-        System.out.println();
+        System.out.print("Enter number of elements (n): ");
+        int n = sc.nextInt();
+
+        int[] numbers = new int[n];
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter element " + (i + 1) + ": ");
+            numbers[i] = sc.nextInt();
+        }
 
         int[] counts = countEvenOdd(numbers);
-        System.out.println("Count of Even Numbers: " + counts[0]);
-        System.out.println("Count of Odd Numbers: " + counts[1]);
+
+        System.out.println();
+        System.out.println("--- Even/Odd Counts ---");
+        System.out.println("Even Numbers Count: " + counts[0]);
+        System.out.println("Odd Numbers Count: " + counts[1]);
+
+        sc.close();
     }
 }

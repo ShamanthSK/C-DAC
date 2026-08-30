@@ -1,4 +1,6 @@
 // Assignment 03 - Question 02: Sum of Digits
+import java.util.Scanner;
+
 public class Q02 {
     static int sumOfDigits(int num) {
         int sum = 0;
@@ -11,10 +13,18 @@ public class Q02 {
     }
 
     public static void main(String[] args) {
-        int number = 9876;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter an integer: ");
+        int number = sc.nextInt();
+
         int sum = sumOfDigits(number);
 
+        System.out.println();
+        System.out.println("--- Digit Sum Result ---");
         System.out.println("Number: " + number);
         System.out.println("Sum of Digits: " + sum);
+
+        sc.close();
     }
 }

@@ -1,4 +1,6 @@
 // Assignment 03 - Question 07: Find Maximum and Minimum
+import java.util.Scanner;
+
 public class Q07 {
     static int[] findMaxMin(int[] arr) {
         if (arr.length == 0) return new int[]{0, 0};
@@ -13,14 +15,24 @@ public class Q07 {
     }
 
     public static void main(String[] args) {
-        int[] numbers = {34, 12, 89, 5, 67, 23};
+        Scanner sc = new Scanner(System.in);
 
-        System.out.print("Array elements: ");
-        for (int n : numbers) System.out.print(n + " ");
-        System.out.println();
+        System.out.print("Enter number of elements (n): ");
+        int n = sc.nextInt();
+
+        int[] numbers = new int[n];
+        for (int i = 0; i < n; i++) {
+            System.out.print("Enter element " + (i + 1) + ": ");
+            numbers[i] = sc.nextInt();
+        }
 
         int[] result = findMaxMin(numbers);
+
+        System.out.println();
+        System.out.println("--- Array Analysis ---");
         System.out.println("Maximum Element: " + result[0]);
         System.out.println("Minimum Element: " + result[1]);
+
+        sc.close();
     }
 }

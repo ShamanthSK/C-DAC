@@ -1,4 +1,6 @@
 // Assignment 02 - Question 01: Electricity Bill Calculation
+import java.util.Scanner;
+
 public class Q01 {
     static double calculateBill(int units) {
         double bill = 0.0;
@@ -15,9 +17,18 @@ public class Q01 {
     }
 
     public static void main(String[] args) {
-        int units = 250;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter electricity units consumed: ");
+        int units = sc.nextInt();
+
         double totalBill = calculateBill(units);
+
+        System.out.println();
+        System.out.println("--- Electricity Bill ---");
         System.out.println("Units Consumed: " + units);
         System.out.println("Total Electricity Bill: Rs. " + totalBill);
+
+        sc.close();
     }
 }

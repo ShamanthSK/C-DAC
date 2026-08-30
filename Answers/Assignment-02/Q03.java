@@ -1,4 +1,6 @@
 // Assignment 02 - Question 03: Product Discount
+import java.util.Scanner;
+
 public class Q03 {
     static double calculateFinalPrice(double price) {
         double discount = 0.0;
@@ -15,15 +17,27 @@ public class Q03 {
     }
 
     public static void main(String[] args) {
-        int productId = 101;
-        String productName = "Laptop";
-        double price = 12000.0;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Product ID: ");
+        int productId = sc.nextInt();
+        sc.nextLine();
+
+        System.out.print("Enter Product Name: ");
+        String productName = sc.nextLine();
+
+        System.out.print("Enter Product Price: ");
+        double price = sc.nextDouble();
 
         double finalPrice = calculateFinalPrice(price);
 
+        System.out.println();
+        System.out.println("--- Product Invoice ---");
         System.out.println("Product ID: " + productId);
         System.out.println("Product Name: " + productName);
         System.out.println("Original Price: Rs. " + price);
         System.out.println("Final Price after Discount: Rs. " + finalPrice);
+
+        sc.close();
     }
 }

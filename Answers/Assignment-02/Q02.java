@@ -1,4 +1,6 @@
 // Assignment 02 - Question 02: Student Grade Calculation
+import java.util.Scanner;
+
 public class Q02 {
     static char calculateGrade(int marks) {
         if (marks >= 90 && marks <= 100) {
@@ -15,9 +17,18 @@ public class Q02 {
     }
 
     public static void main(String[] args) {
-        int marks = 82;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter student marks (0-100): ");
+        int marks = sc.nextInt();
+
         char grade = calculateGrade(marks);
-        System.out.println("Student Marks: " + marks);
+
+        System.out.println();
+        System.out.println("--- Result ---");
+        System.out.println("Marks: " + marks);
         System.out.println("Calculated Grade: " + grade);
+
+        sc.close();
     }
 }

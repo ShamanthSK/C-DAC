@@ -1,4 +1,6 @@
 // Assignment 02 - Question 06: Employee Salary Calculation
+import java.util.Scanner;
+
 public class Q06 {
     static double calculateSalary(double basicSalary) {
         double hra;
@@ -11,10 +13,18 @@ public class Q06 {
     }
 
     public static void main(String[] args) {
-        double basicSalary = 55000.0;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter basic salary: ");
+        double basicSalary = sc.nextDouble();
+
         double finalSalary = calculateSalary(basicSalary);
 
+        System.out.println();
+        System.out.println("--- Salary Slip ---");
         System.out.println("Basic Salary: Rs. " + basicSalary);
         System.out.println("Final Salary (with HRA): Rs. " + finalSalary);
+
+        sc.close();
     }
 }

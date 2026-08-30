@@ -1,4 +1,6 @@
 // Assignment 02 - Question 09: Bus Ticket Fare
+import java.util.Scanner;
+
 public class Q09 {
     static double calculateFare(int age) {
         if (age < 5) {
@@ -13,13 +15,22 @@ public class Q09 {
     }
 
     public static void main(String[] args) {
-        String passengerName = "Ramesh Kumar";
-        int age = 65;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter passenger name: ");
+        String passengerName = sc.nextLine();
+
+        System.out.print("Enter passenger age: ");
+        int age = sc.nextInt();
 
         double fare = calculateFare(age);
 
+        System.out.println();
+        System.out.println("--- Bus Ticket Receipt ---");
         System.out.println("Passenger Name: " + passengerName);
         System.out.println("Passenger Age: " + age);
-        System.out.println("Bus Ticket Fare: Rs. " + fare);
+        System.out.println("Ticket Fare: Rs. " + fare);
+
+        sc.close();
     }
 }
